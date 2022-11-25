@@ -18,8 +18,8 @@ import {
           setLoading(true)
   
           try {
-              const { data: { items } } = await oracle.get("ords/admin/times/"); 
-              setHistoryData(items);
+              const { data: { items } } = await oracle.get("ords/admin/times/?limit=2000"); 
+              setHistoryData(items.sort((a, b) => b.id - a.id));
           } catch(e) {
               console.error(e)
           } finally {

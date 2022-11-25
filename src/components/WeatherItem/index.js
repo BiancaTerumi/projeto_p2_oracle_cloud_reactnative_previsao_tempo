@@ -26,7 +26,7 @@ const Temp = ({text, isMax}) => {
         Temp  
       </Text>
       <Text style={styles.tempText}>
-        {isMax? "max: " : "min: "}{text}
+        {isMax? "max: " : "min: "}{text}°
       </Text>
     </View>
   )

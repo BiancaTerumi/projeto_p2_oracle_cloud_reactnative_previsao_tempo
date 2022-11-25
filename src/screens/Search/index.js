@@ -7,6 +7,7 @@ import { oracle } from "../../services/oracle";
 import WeatherItem from '../../components/WeatherItem';
 
 import { styles } from './styles';
+import { format } from 'date-fns';
 
 const Search = () => {
     const [location, setLocation] = useState();
@@ -34,7 +35,7 @@ const Search = () => {
 
         data.map(async({ dt, weather }) => {
             formatData = {
-              codigo_tempo: dt * 1000,
+              codigo_tempo: dt * 1000+"-"+name.toLowerCase(),
               link: weather[0]["icon"],
               cidade: `${name}`,
               data: new Date(dt * 1000).toISOString(),
@@ -56,7 +57,7 @@ const Search = () => {
             ItemSeparatorComponent={ <View style={styles.separator}/>}
             showsVerticalScrollIndicator={false}
             renderItem={({item}) => <WeatherItem
-                date={new Date(item.dt * 1000).toLocaleString()}
+                date={format(item.dt*1000, "dd/MM/yyyy HH:mm")}
                 maxTemp={item.temp.max}
                 minTemp={item.temp.min}
                 iconUrl={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}

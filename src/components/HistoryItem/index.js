@@ -1,8 +1,10 @@
 import { View, Text, Image } from 'react-native';
 import { styles } from './styles';
+import { format } from 'date-fns';
 
 const HistoryItem = ({link, data, cidade}) => {
-  const formatedData = data.slice(0, 7);
+  const formatedData = format(new Date(data), "dd/MM");
+
   return (
     <View style={styles.container}>
       <View style={styles.historyRow}>
