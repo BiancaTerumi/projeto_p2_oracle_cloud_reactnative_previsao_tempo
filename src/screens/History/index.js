@@ -1,8 +1,6 @@
 import {
-    StyleSheet,
     Text,
     View,
-    SafeAreaView,
     FlatList,
     TouchableOpacity,
     ActivityIndicator,
@@ -63,7 +61,6 @@ import {
   }
   
   const Footer = ({onPress}) => {
-      console.log("teste")
       return (
           <TouchableOpacity onPress={onPress} style={styles.searchButton}>
           <Text style={styles.buttonText}>

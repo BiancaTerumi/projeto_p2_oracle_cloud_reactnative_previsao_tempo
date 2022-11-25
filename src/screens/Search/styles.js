@@ -34,4 +34,10 @@ export const styles = StyleSheet.create({
     loading: {
         flex:1
     },
+    input: {
+        flex:1,
+        backgroundColor: "white",
+        borderRadius: 10,
+        padding: 15,
+    }
 })
